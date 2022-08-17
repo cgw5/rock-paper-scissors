@@ -52,4 +52,5 @@ function game() {
     }
 }
 
+// plays game in console
  console.log(game());
