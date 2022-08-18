@@ -15,18 +15,22 @@ function getPlayerChoice() {
 // playRound gives result of a round of the game 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
+        console.log("TIE")
         return "It's a tie."
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++
+        console.log("WIN")
         return "You win!"
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++
+        console.log("WIN")
         return "You win!"
     }
     else {
         computerScore++
+        console.log("LOSER")
         return "You lose."
     }
 }
