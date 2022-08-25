@@ -2,6 +2,29 @@ let playerScore = 0
 let computerScore = 0;
 const choices = ["Rock", "Paper", "Scissors"];
 
+let playerScoreCounter = document.getElementById('playerScore')
+let compScoreCounter = document.getElementById('computerScore')
+
+
+const rockButton = document.querySelector('#rockButton');
+const paperButton = document.querySelector('#paperButton');
+const scissorsButton = document.querySelector('#scissorsButton');
+
+// clicking on rock calls game function with "rock" as the player choice
+rockButton.addEventListener("click", e =>  {
+    game("rock");
+});
+
+// clicking on paper calls game function with "rock" as the player choice
+paperButton.addEventListener("click", e =>  {
+    game("paper");
+});
+
+// clicking on scissors calls game function with "rock" as the player choice
+scissorsButton.addEventListener("click", e =>  {
+    game("scissors");
+});
+
 // Computer picks either rock, paper, or scissors
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)].toLowerCase()
@@ -35,16 +58,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// for 5 rounds, plays the game
-function game() {
-    while (playerScore < 5 && computerScore < 5) {
-        let computerSelection = getComputerChoice()
-        let playerSelection = getPlayerChoice()
-        playRound(playerSelection, computerSelection)
-        console.log(`Player Score: ${playerScore} `)
-        console.log(`Computer Score: ${computerScore}`)
-        console.log("")
-    }
+// game function
+function game(playerSelection) {
+    let computerSelection = getComputerChoice()
+    playRound(playerSelection, computerSelection)
+    console.log(`Player Score: ${playerScore} `)
+    console.log(`Computer Score: ${computerScore}`)
+    playerScoreCounter.textContent = `Player Score: ${playerScore} `;
+    compScoreCounter.textContent = `Computer Score: ${computerScore} `;
+    console.log("")
     if (playerScore > computerScore) {
         return "You beat the computer!"
     }
@@ -55,6 +77,3 @@ function game() {
         return "It's a draw."
     }
 }
-
-// plays game in console
- console.log(game());

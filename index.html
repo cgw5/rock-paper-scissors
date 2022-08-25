@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="game.js"></script>
+    <script src="game.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+    <div class="header">ROCK PAPER SCISSORS!</div>
+    <div class="game-container">
+        <div class="instruction">Choose your weapon!</div>
+        <div class="game">
+            <button class="button" id="rockButton">Rock</button>
+            <button class="button" id="paperButton">Paper</button>
+            <button class="button" id="scissorsButton">Scissors</button>
+        </div>
+        <div class="game-score">
+            <div class="score" id="playerScore">Player Score: 0</div>
+            <div class="score" id="computerScore">Computer Score: 0</div>
+        </div>
+    </div>
+    <p id="demo"></p>
 </body>
-</html>
+</html> 
