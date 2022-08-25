@@ -44,15 +44,22 @@ function getPlayerChoice() {
 
 // playRound gives result of a round of the game and prints result of round
 function playRound(playerSelection, computerSelection) {
+    choice.textContent = `You chose ${playerSelection} and the computer chose ${computerSelection}.`;
     if (playerSelection === computerSelection) {
         result.textContent = "It's a draw.";
         return "It's a tie."
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++
+        result.textContent = "You beat the computer!";
         return "You win!"
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
+        playerScore++
+        result.textContent = "You beat the computer!";
+        return "You win!"
+    }
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++
         result.textContent = "You beat the computer!";
         return "You win!"
@@ -73,7 +80,6 @@ function game(playerSelection) {
         playRound(playerSelection, computerSelection)
         playerScoreCounter.textContent = `Player Score: ${playerScore} `;
         compScoreCounter.textContent = `Computer Score: ${computerScore} `;
-        choice.textContent = `You chose ${playerSelection} and the computer chose ${computerSelection}.`;
     }
     if (playerScore == 5) {
         document.getElementById('rockButton').disabled = true;
