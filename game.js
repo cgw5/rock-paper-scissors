@@ -45,24 +45,20 @@ function getPlayerChoice() {
 // playRound gives result of a round of the game and prints result of round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log("TIE")
         result.textContent = "It's a draw.";
         return "It's a tie."
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++
-        console.log("WIN")
         return "You win!"
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++
-        console.log("WIN")
         result.textContent = "You beat the computer!";
         return "You win!"
     }
     else {
         computerScore++
-        console.log("LOSER")
         result.textContent = "You lost against the computer.";
         return "You lose."
     }
